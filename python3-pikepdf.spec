@@ -91,6 +91,9 @@ Dokumentacja API modułu Pythona pikepdf.
 
 %build
 export CMAKE_BUILD_PARALLEL_LEVEL=%{__jobs}
+export SKBUILD_BUILD_VERBOSE=true
+export SKBUILD_CMAKE_BUILD_TYPE=PLD
+export SKBUILD_INSTALL_STRIP=false
 %py3_build_pyproject
 
 %if %{with doc} || %{with tests}
